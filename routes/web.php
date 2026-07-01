@@ -13,7 +13,7 @@ Route::view('/campus-facilities', 'pages.campusFacilities')->name('CampusFacilit
 Route::view('/student-life', 'pages.studentLife')->name('StudentLife');
 Route::view('/faculty-staff', 'pages.facultyStaff')->name('FacultyStaff');
 Route::view('/cbse-corner', 'pages.cbseCorner')->name('CBSECorner');
-Route::view('/book-lists', 'pages.bookLists')->name('BookLists');
+Route::view('/book-lists', 'pages.bookList')->name('BookLists');
 Route::view('/contact', 'pages.contact')->name('Contact');
 
 

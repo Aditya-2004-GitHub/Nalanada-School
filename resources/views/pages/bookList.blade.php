@@ -624,6 +624,446 @@
 
 
 <script>
+    // ══════════ DATA ══════════
+    const DATA = {
+        nursery: {
+            label: "Nursery",
+            title: "Class – Nursery",
+            sub: "Pre-Primary",
+            books: [
+                ["Start Smart Kit Nursery", "SKY BOOKS", "9789351871120", "₹1399"],
+                ["अक्षरलेखन", "Redeemer Publication", "9789389363494", "₹170"],
+                ["अक्षरज्ञान", "Redeemer Publication", "9789389363517", "₹160"],
+                ["गीतसरगम-1", "Vista Educational Books", "9788178303505", "₹80"]
+            ],
+            total: "₹1809",
+            copies: [
+                ["3 in 1", "2", "General"],
+                ["4 Line", "1", "EVS"],
+                ["Plain Drawing Book", "1", "Drawing"]
+            ],
+            copyTotal: "4 Copies"
+        },
+        kg1: {
+            label: "KG-1",
+            title: "Class – KG-1",
+            sub: "Pre-Primary",
+            books: [
+                ["Start Smart Kit LKG", "SKY BOOKS", "9789356871342", "₹1599"],
+                ["शब्दलेखन", "Redeemer Publication", "9789389363487", "₹160"],
+                ["शब्दज्ञान", "Redeemer Publication", "9789389363524", "₹160"],
+                ["गीतसरगम-2", "Vista Educational Books", "9788178303512", "₹80"]
+            ],
+            total: "₹1999",
+            copies: [
+                ["4 Line", "4", "—"],
+                ["Square (Maths)", "2", "—"],
+                ["2 Line", "2", "—"],
+                ["Plain Drawing Book", "1", "—"]
+            ],
+            copyTotal: "9 Copies"
+        },
+        kg2: {
+            label: "KG-2",
+            title: "Class – KG-2",
+            sub: "Pre-Primary",
+            books: [
+                ["Start Smart Kit UKG", "SKY BOOKS", "9789356871601", "₹1699"],
+                ["स्वरलेखन", "Redeemer Publication", "9789389363470", "₹160"],
+                ["स्वरज्ञान", "Redeemer Publication", "9789389363500", "₹160"],
+                ["गीतसरगम-3", "Vista Educational Books", "9788178303635", "₹80"]
+            ],
+            total: "₹2099",
+            copies: [
+                ["4 Line", "4", "—"],
+                ["Square (Maths)", "2", "—"],
+                ["2 Line", "2", "—"],
+                ["Plain Drawing Book", "1", "—"]
+            ],
+            copyTotal: "9 Copies"
+        },
+        "1": {
+            label: "I",
+            title: "Class – I",
+            sub: "Primary",
+            books: [
+                ["English (Mridang)", "NCERT", "9789352924394", "₹65"],
+                ["English (Mridang) Workbook", "Arihant", "9789364370387", "₹150"],
+                ["Hindi (Sarangi)", "NCERT", "9789352924233", "₹65"],
+                ["Hindi (Sarangi) Workbook", "Arihant", "9789364370257", "₹160"],
+                ["Smart Maths", "S. Chand", "9789355019110", "₹430"],
+                ["My Green World-1 (EVS)", "Millennium Booksource", "9789394041295", "₹329"],
+                ["Computer Magic", "RatnaSagar", "9789387208209", "₹284"],
+                ["Knowledge Garden (GK)", "Devsiddh", "9788194325338", "₹250"],
+                ["Righteous (Moral Values)", "Devsiddh", "9788193783498", "₹200"]
+            ],
+            total: "₹1933",
+            copies: [
+                ["Four Line (200 Pg)", "2", "English, GK, Moral Science"],
+                ["Two Line (200 Pg)", "1", "Hindi"],
+                ["Square (200 Pg)", "1", "Maths"],
+                ["Plain Drawing Copy", "1", "Drawing"],
+                ["Practical Four Line", "2", "EVS, Computer"],
+                ["Test Copies (100 Pg)", "6", "All Subjects"],
+                ["Rough Register", "1", "All Subjects"]
+            ],
+            copyTotal: "14 Copies"
+        },
+        "2": {
+            label: "II",
+            title: "Class – II",
+            sub: "Primary",
+            books: [
+                ["English (Mridang)", "NCERT", "9789352924349", "₹65"],
+                ["English (Mridang) Workbook", "Arihant Prakashan", "9789364373289", "₹150"],
+                ["Hindi (Sarangi)", "NCERT", "9789352924387", "₹65"],
+                ["Hindi (Sarangi) Workbook", "Arihant Prakashan", "9789364370813", "₹175"],
+                ["Smart Maths", "S. Chand", "9789355019127", "₹435"],
+                ["Maths Workbook", "Arihant Prakashan", "—", "—"],
+                ["My Green World-2 (EVS)", "Millennium Booksource", "9394041281", "₹369"],
+                ["Computer Magic", "RatnaSagar", "9789387208216", "₹329"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658564", "₹280"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849507", "₹210"]
+            ],
+            total: "₹2078",
+            copies: [
+                ["Four Line (200 Pg)", "2", "English, GK, Moral Science"],
+                ["Two Line (200 Pg)", "1", "Hindi"],
+                ["Maths Copy / Square (200 Pg)", "1", "Mathematics"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"],
+                ["Practical Four Line (200 Pg)", "2", "EVS, Computer"],
+                ["Test Copies (100 Pg)", "6", "All Subjects"],
+                ["Rough Register", "1", "All Subjects"]
+            ],
+            copyTotal: "7 Regular + 6 Test + 1 Rough"
+        },
+        "3": {
+            label: "III",
+            title: "Class – III",
+            sub: "Primary",
+            books: [
+                ["English (Santoor)", "NCERT", "9789352929917", "₹65"],
+                ["English (Santoor) Workbook", "Arihant Prakashan", "9789364374996", "₹160"],
+                ["Hindi (Veena)", "NCERT", "9789352929498", "₹65"],
+                ["Hindi (Veena) Workbook", "Arihant Prakashan", "9789364371117", "₹175"],
+                ["Smart Maths", "S. Chand", "9789364682152", "₹535"],
+                ["Maths Mela (Workbook)", "Arihant Prakashan", "—", "—"],
+                ["Our Wondrous World (EVS)", "NCERT", "9789352928637", "₹65"],
+                ["EVS Workbook", "Arihant Prakashan", "—", "—"],
+                ["Computer Magic", "RatnaSagar", "9789387208223", "₹364"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658922", "₹280"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849514", "₹210"]
+            ],
+            total: "₹1919",
+            copies: [
+                ["Four Line (200 Pg)", "2", "English, GK, Moral Science"],
+                ["Two Line (200 Pg)", "1", "Hindi"],
+                ["Square Copy (200 Pg)", "1", "Mathematics"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"],
+                ["Practical Four Line (200 Pg)", "2", "EVS, Computer"]
+            ],
+            copyTotal: "7 Regular + 6 Test + 1 Rough"
+        },
+        "4": {
+            label: "IV",
+            title: "Class – IV",
+            sub: "Primary",
+            books: [
+                ["English (Santoor)", "NCERT", "9789357299329", "₹65"],
+                ["Hindi (Veena)", "NCERT", "9789357293372", "₹65"],
+                ["Smart Maths", "S. Chand", "9789369583645", "₹550"],
+                ["Math-Magic (Workbook)", "Arihant Prakashan", "—", "₹160"],
+                ["Our Wondrous World (EVS)", "NCERT", "9789357291231", "₹65"],
+                ["EVS Workbook", "Arihant Prakashan", "—", "₹175"],
+                ["Computer Magic", "RatnaSagar", "9789387208230", "₹279"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658472", "₹280"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849521", "₹220"]
+            ],
+            total: "₹1859",
+            copies: [
+                ["Single Line Register (200 Pg)", "3", "English, Maths, Hindi"],
+                ["Practical Register (200 Pg)", "2", "Computer, EVS"],
+                ["Rough Register (200 Pg)", "1", "All Subjects"],
+                ["One Line Copy (100 Pg)", "4", "GK, Moral Science, Eng Grammar, Hindi Grammar"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"]
+            ],
+            copyTotal: "11 Copies + 6 Test"
+        },
+        "5": {
+            label: "V",
+            title: "Class – V",
+            sub: "Primary",
+            books: [
+                ["English (Santoor)", "NCERT", "9789357290623", "₹65"],
+                ["Hindi (Veena)", "NCERT", "9789357296670", "₹65"],
+                ["Smart Maths", "S. Chand", "9789369584390", "₹580"],
+                ["Math-Magic (Workbook)", "Arihant Prakashan", "9789364372756", "₹160"],
+                ["Our Wondrous World (EVS)", "NCERT", "9789357290302", "₹65"],
+                ["Computer Magic", "RatnaSagar", "9789387208247", "₹399"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658540", "₹280"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849538", "₹220"]
+            ],
+            total: "₹1834",
+            copies: [
+                ["Single Line Register (200 Pg)", "3", "English, Maths, Hindi"],
+                ["Practical Register (200 Pg)", "2", "Computer, EVS"],
+                ["Rough Register (200 Pg)", "1", "All Subjects"],
+                ["One Line Copy (100 Pg)", "4", "GK, Moral Science, Eng Grammar, Hindi Grammar"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"]
+            ],
+            copyTotal: "11 Copies + 6 Test"
+        },
+        "6": {
+            label: "VI",
+            title: "Class – VI",
+            sub: "Middle School",
+            books: [
+                ["English (Poorvi)", "NCERT", "9789352929825", "₹65"],
+                ["Grammar World (English, optional)", "Devsiddh", "9788193783450", "₹350"],
+                ["Hindi (Malhar)", "NCERT", "9789352929467", "₹65"],
+                ["नई किरण हिंदी व्याकरण (optional)", "Devsiddh", "9789391658090", "₹320"],
+                ["Sanskrit (Deepkam)", "NCERT", "9789352929238", "₹65"],
+                ["Ganita Prakash", "NCERT", "9789352927173", "₹65"],
+                ["Curiosity (Science)", "NCERT", "9789352929726", "₹65"],
+                ["Exploring Society: India &amp; Beyond", "NCERT", "9789352926930", "₹65"],
+                ["Computer Magic (IT)", "RatnaSagar", "9789387208254", "₹459"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658755", "₹300"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849545", "₹240"],
+                ["Drawing Book (Blank)", "—", "—", "—"]
+            ],
+            total: "₹2059",
+            copies: [
+                ["Single Line Register (200 Pg)", "4", "English, Hindi, Maths, Sanskrit"],
+                ["Practical Register (200 Pg)", "3", "Computer, Geography, Science"],
+                ["Single Line Register (100 Pg)", "4", "History, Hindi/Eng Grammar, GK & Moral"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"],
+                ["Music Copy (50 Pg)", "1", "Music"],
+                ["Rough Copy (200 Pg)", "1", "All Subjects"],
+                ["Test Copies (50 Pg)", "7", "All Subjects"]
+            ],
+            copyTotal: "21 Copies"
+        },
+        "7": {
+            label: "VII",
+            title: "Class – VII",
+            sub: "Middle School",
+            books: [
+                ["English (Poorvi)", "NCERT", "9789357297592", "₹65"],
+                ["Grammar World (English, optional)", "Devsiddh", "9788193783467", "₹300"],
+                ["Hindi (Malhar)", "NCERT", "9789357299572", "₹65"],
+                ["नई किरण हिंदी व्याकरण (optional)", "Devsiddh", "9789391658106", "₹340"],
+                ["Sanskrit (Deepkam)", "NCERT", "9789357296861", "₹65"],
+                ["Ganita Prakash Part-I", "NCERT", "9789357299831", "₹65"],
+                ["Ganita Prakash Part-II", "NCERT", "9789357291569", "₹65"],
+                ["Curiosity (Science)", "NCERT", "9789357290395", "₹65"],
+                ["Exploring Society Part-I", "NCERT", "9789357292870", "₹65"],
+                ["Exploring Society Part-II", "NCERT", "9789357261415", "₹65"],
+                ["Computer Magic (IT)", "RatnaSagar", "9789387208261", "₹469"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9789391658588", "₹300"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9788193849552", "₹230"],
+                ["Drawing Book (Blank)", "—", "—", "—"]
+            ],
+            total: "₹2159",
+            copies: [
+                ["Single Line Register (200 Pg)", "6", "English, Hindi, Maths, Sanskrit, Civics, History"],
+                ["Practical Register (200 Pg)", "3", "Computer, Geography, Science"],
+                ["Single Line Register (100 Pg)", "3", "Hindi/Eng Grammar, GK & Moral"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"],
+                ["Music Copy (50 Pg)", "1", "Music"],
+                ["Rough Copy (200 Pg)", "1", "All Subjects"],
+                ["Test Copies (50 Pg)", "7", "All Subjects"]
+            ],
+            copyTotal: "22 Copies"
+        },
+        "8": {
+            label: "VIII",
+            title: "Class – VIII",
+            sub: "Middle School",
+            books: [
+                ["English (Poorvi)", "NCERT", "9789357299404", "₹65"],
+                ["Grammar World (English, optional)", "Devsiddh", "9788193783474", "₹360"],
+                ["Hindi (Malhar)", "NCERT", "9789357293600", "₹65"],
+                ["नई किरण हिंदी व्याकरण (optional)", "Devsiddh", "9789391658120", "₹360"],
+                ["Sanskrit (Deepkam)", "NCERT", "9789357292948", "₹65"],
+                ["Ganita Prakash Part-I", "NCERT", "9789357296427", "₹65"],
+                ["Ganita Prakash Part-II", "NCERT", "9789357291064", "₹65"],
+                ["Curiosity (Science)", "NCERT", "9789357297721", "₹65"],
+                ["Exploring Society Part-I", "NCERT", "9789357292931", "₹65"],
+                ["Computer Magic (IT)", "RatnaSagar", "9789387208278", "₹459"],
+                ["Knowledge Garden (GK, optional)", "Devsiddh", "9788193871461", "₹250"],
+                ["Righteous (Moral, optional)", "Devsiddh", "9789193849569", "₹250"],
+                ["Drawing Book (Blank)", "—", "—", "—"]
+            ],
+            total: "₹2134",
+            copies: [
+                ["Single Line Register (200 Pg)", "4", "English, Hindi, Maths, Sanskrit"],
+                ["Practical Register (200 Pg)", "3", "Computer, Geography, Science"],
+                ["Single Line Register (100 Pg)", "4", "History, Hindi/Eng Grammar, GK & Moral"],
+                ["Plain Drawing Copy (50 Pg)", "1", "Drawing"],
+                ["Music Copy (50 Pg)", "1", "Music"],
+                ["Rough Copy (200 Pg)", "1", "All Subjects"],
+                ["Test Copies (50 Pg)", "7", "All Subjects"]
+            ],
+            copyTotal: "21 Copies"
+        },
+        "9": {
+            label: "IX",
+            title: "Class – IX",
+            sub: "Secondary",
+            books: [
+                ["Beehive (English Lit.)", "NCERT", "—", "₹65"],
+                ["Moment (English Supp.)", "NCERT", "—", "₹40"],
+                ["Kshitij (Hindi Course-A)", "NCERT", "—", "₹55"],
+                ["Kritika (Hindi Supp.)", "NCERT", "—", "₹25"],
+                ["Mathematics", "NCERT", "—", "₹160"],
+                ["Science", "NCERT", "—", "₹149"],
+                ["History", "NCERT", "—", "₹115"],
+                ["Geography", "NCERT", "—", "₹55"],
+                ["Civics", "NCERT", "—", "₹90"],
+                ["Economics", "NCERT", "—", "₹45"],
+                ["Information Technology", "Dhanpat Rai & Co.", "—", "₹495"]
+            ],
+            total: "₹1294",
+            copies: [],
+            copyTotal: ""
+        },
+        "10": {
+            label: "X",
+            title: "Class – X",
+            sub: "Secondary",
+            books: [
+                ["First Flight (English Lit.)", "NCERT", "—", "₹65"],
+                ["Foot Prints (English Supp.)", "NCERT", "—", "₹40"],
+                ["Kshitij (Hindi Course-A)", "NCERT", "—", "₹55"],
+                ["Kritika (Hindi Supp.)", "NCERT", "—", "₹25"],
+                ["Mathematics", "NCERT", "—", "—"],
+                ["Science", "NCERT", "—", "—"],
+                ["History", "NCERT", "—", "₹125"],
+                ["Geography", "NCERT", "—", "₹68"],
+                ["Civics", "NCERT", "—", "₹90"],
+                ["Economics", "NCERT", "—", "₹65"],
+                ["Information Technology (402)", "Dhanpat Rai & Co.", "—", "₹495"]
+            ],
+            total: "₹963",
+            copies: [],
+            copyTotal: ""
+        },
+        "11": {
+            label: "XI",
+            title: "Class – XI",
+            sub: "Senior Secondary",
+            subjects: [
+                ["102", "Hindi Elective"],
+                ["301", "English Core"],
+                ["083", "Computer Science"],
+                ["048", "Physical Education"],
+                ["054", "Business Studies"],
+                ["030", "Economics"],
+                ["055", "Accountancy"],
+                ["041", "Mathematics"],
+                ["042", "Physics"],
+                ["043", "Chemistry"],
+                ["044", "Biology"]
+            ],
+            note: "ISBN, price and copy list are not specified for Class XI in the official book list — all listed textbooks are published by NCERT. Please contact the school office for current pricing."
+        },
+        "12": {
+            label: "XII",
+            title: "Class – XII",
+            sub: "Senior Secondary",
+            subjects: [
+                ["102", "Hindi Elective"],
+                ["301", "English Core"],
+                ["083", "Computer Science"],
+                ["048", "Physical Education"],
+                ["054", "Business Studies"],
+                ["030", "Economics"],
+                ["055", "Accountancy"],
+                ["041", "Mathematics"],
+                ["042", "Physics"],
+                ["043", "Chemistry"],
+                ["044", "Biology"]
+            ],
+            note: "ISBN, price and copy list are not specified for Class XII in the official book list — all listed textbooks are published by NCERT. Please contact the school office for current pricing."
+        }
+    };
 
+    const ORDER = ["nursery", "kg1", "kg2", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+
+    function buildTabs() {
+        const wrap = document.getElementById('class-tabs');
+        ORDER.forEach((key, i) => {
+            const b = document.createElement('button');
+            b.className = 'ctab' + (i === 0 ? ' active' : '');
+            b.textContent = DATA[key].label;
+            b.dataset.key = key;
+            b.onclick = () => selectClass(key);
+            wrap.appendChild(b);
+        });
+    }
+
+    function renderBookTable(d) {
+        let rows = d.books.map(b => `<tr><td>${b[0]}</td><td>${b[1]}</td><td class="isbn">${b[2]}</td><td class="price">${b[3]}</td></tr>`).join('');
+        return `<div class="table-card">
+                <div class="table-card-head"><h4>📚 Text Books &amp; Workbooks</h4></div>
+                <div class="table-scroll"><table class="dtable">
+                    <thead><tr><th>Book Name</th><th>Publisher</th><th>ISBN</th><th>Price</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table></div>
+                <div class="total-row"><span class="tl-label">Total Book Cost</span><span class="tl-amt">${d.total}</span></div>
+            </div>`;
+    }
+
+    function renderCopyTable(d) {
+        if (!d.copies.length) return '';
+        let rows = d.copies.map(c => `<tr><td>${c[0]}</td><td>${c[1]}</td><td>${c[2]}</td></tr>`).join('');
+        return `<div class="table-card">
+                <div class="table-card-head"><h4>📓 Copy / Notebook List</h4></div>
+                <div class="table-scroll"><table class="dtable">
+                    <thead><tr><th>Copy Type</th><th>Qty</th><th>Subject / Purpose</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table></div>
+                <div class="total-row"><span class="tl-label">Total Copies</span><span class="tl-amt" style="font-size:18px">${d.copyTotal}</span></div>
+            </div>`;
+    }
+
+    function renderSubjectPanel(d) {
+        let chips = d.subjects.map(s => `<div class="subj-chip"><b>${s[0]}</b>${s[1]}</div>`).join('');
+        return `<div class="note-box"><strong>Note:</strong> ${d.note}</div>
+            <div class="table-card">
+                <div class="table-card-head"><h4>📘 Subject-wise Book List (Publisher: NCERT)</h4></div>
+                <div class="subj-grid">${chips}</div>
+            </div>`;
+    }
+
+    function buildPanels() {
+        const wrap = document.getElementById('panels');
+        ORDER.forEach((key, i) => {
+            const d = DATA[key];
+            const panel = document.createElement('div');
+            panel.className = 'class-panel' + (i === 0 ? ' active' : '');
+            panel.id = 'panel-' + key;
+            let inner = `<div class="panel-head"><h3>${d.title}</h3><p>${d.sub} · Session 2026–27</p></div>`;
+            if (d.subjects) {
+                inner += renderSubjectPanel(d);
+            } else {
+                inner += `<div class="panel-grid"><div>${renderBookTable(d)}</div><div>${renderCopyTable(d)}</div></div>`;
+            }
+            panel.innerHTML = inner;
+            wrap.appendChild(panel);
+        });
+    }
+
+    function selectClass(key) {
+        document.querySelectorAll('.ctab').forEach(b => b.classList.toggle('active', b.dataset.key === key));
+        document.querySelectorAll('.class-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + key));
+        document.querySelector('.class-tabs-wrap').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    buildTabs();
+    buildPanels();
 </script>
 @endsection

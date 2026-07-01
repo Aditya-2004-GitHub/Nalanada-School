@@ -34,12 +34,12 @@
             <a href="{{ route('FacultyStaff') }}">Faculty &amp; Staff</a>
             <a href="{{ route('CBSECorner') }}">CBSE Corner</a>
             <!-- <a href="#gallery">Gallery</a> -->
-            <a href="#events">Book Lists</a>
-            <a href="#contact">Contact</a>
+            <a href="{{ route('BookLists') }}">Book Lists</a>
+            <a href="{{ route('Contact') }}">Contact</a>
         </div>
         <div class="nav-ctas">
-            <a href="#contact" class="btn btn-ghost">Enquire Now</a>
-            <a href="#admissions" class="btn btn-green">Apply 2026–27</a>
+            <a href="{{ route('Contact') }}" class="btn btn-ghost">Enquire Now</a>
+            <a href="{{ route('Admissions') }}" class="btn btn-green">Apply 2026–27</a>
         </div>
         <!-- HAMBURGER -->
         <button class="ham" id="ham-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -65,19 +65,17 @@
         <nav class="drawer-links">
             <a href="{{ route('Home') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Home</a>
             <a href="{{ route('About') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>About Us</a>
-            <a href="{{ route('Admissions') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Why Choose Us</a>
+            <a href="{{ route('Admissions') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Admissions</a>
             <a href="{{ route('Academics') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Academics</a>
-            <a href="{{ route('CampusFacilities') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Campus & Infrastructure</a>
+            <a href="{{ route('CampusFacilities') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Campus & Facilities</a>
             <a href="{{ route('StudentLife') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Student Life</a>
-            <a href="#faculty" onclick="closeMobileMenu()"><span class="dl-dot"></span>Faculty</a>
-            <!-- <a href="#gallery" onclick="closeMobileMenu()"><span class="dl-dot"></span>Gallery</a> -->
-            <a href="#events" onclick="closeMobileMenu()"><span class="dl-dot"></span>Events</a>
-            <a href="#cbse" onclick="closeMobileMenu()"><span class="dl-dot"></span>CBSE Corner</a>
-            <a href="#contact" onclick="closeMobileMenu()"><span class="dl-dot"></span>Contact Us</a>
+            <a href="{{ route('FacultyStaff') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Faculty & Staff</a>
+            <a href="{{ route('CBSECorner') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>CBSE Corner</a>
+            <a href="{{ route('Contact') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Contact Us</a>
         </nav>
         <div class="drawer-ctas">
-            <a href="#admissions" onclick="closeMobileMenu()" class="btn btn-green">Apply for 2026–27</a>
-            <a href="#contact" onclick="closeMobileMenu()" class="btn btn-ghost">Enquire Now</a>
+            <a href="{{ route('Admissions') }}" onclick="closeMobileMenu()" class="btn btn-green">Apply for 2026–27</a>
+            <a href="{{ route('Contact') }}" onclick="closeMobileMenu()" class="btn btn-ghost">Enquire Now</a>
         </div>
         <div class="drawer-chips">
             <span class="chip-sm">CBSE No. 1031141</span>
