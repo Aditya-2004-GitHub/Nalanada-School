@@ -7,6 +7,13 @@ use App\Http\Controllers\AdminController;
 Route::view('/', 'pages.home')->name('Home');
 Route::view('/about', 'pages.about')->name('About');
 Route::view('/academics', 'pages.academics')->name('Academics');
+Route::view('/admissions', 'pages.admissions')->name('Admissions');
+Route::view('/campus-facilities', 'pages.campusFacilities')->name('CampusFacilities');
+Route::view('/student-life', 'pages.studentLife')->name('StudentLife');
+Route::view('/faculty-staff', 'pages.facultyStaff')->name('FacultyStaff');
+Route::view('/cbse-corner', 'pages.cbseCorner')->name('CBSECorner');
+Route::view('/book-lists', 'pages.bookLists')->name('BookLists');
+Route::view('/contact', 'pages.contact')->name('Contact');
 
 
 // Guest routes - only accessible when NOT logged in

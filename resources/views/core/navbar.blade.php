@@ -28,11 +28,11 @@
             <a href="{{ route('Home') }}">Home</a>
             <a href="{{ route('About') }}">About</a>
             <a href="{{ route('Academics') }}">Academics</a>
-            <a href="#why">Admissions</a>
-            <a href="#campus">Campus &amp; Facilities</a>
-            <a href="#students">Student Life</a>
-            <a href="#faculty">Faculty &amp; Staff</a>
-            <a href="#cbse">CBSE Corner</a>
+            <a href="{{ route('Admissions') }}">Admissions</a>
+            <a href="{{ route('CampusFacilities') }}">Campus &amp; Facilities</a>
+            <a href="{{ route('StudentLife') }}">Student Life</a>
+            <a href="{{ route('FacultyStaff') }}">Faculty &amp; Staff</a>
+            <a href="{{ route('CBSECorner') }}">CBSE Corner</a>
             <!-- <a href="#gallery">Gallery</a> -->
             <a href="#events">Book Lists</a>
             <a href="#contact">Contact</a>
@@ -65,10 +65,10 @@
         <nav class="drawer-links">
             <a href="{{ route('Home') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Home</a>
             <a href="{{ route('About') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>About Us</a>
-            <a href="#why" onclick="closeMobileMenu()"><span class="dl-dot"></span>Why Choose Us</a>
+            <a href="{{ route('Admissions') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Why Choose Us</a>
             <a href="{{ route('Academics') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Academics</a>
-            <a href="#campus" onclick="closeMobileMenu()"><span class="dl-dot"></span>Campus & Infrastructure</a>
-            <a href="#students" onclick="closeMobileMenu()"><span class="dl-dot"></span>Student Life</a>
+            <a href="{{ route('CampusFacilities') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Campus & Infrastructure</a>
+            <a href="{{ route('StudentLife') }}" onclick="closeMobileMenu()"><span class="dl-dot"></span>Student Life</a>
             <a href="#faculty" onclick="closeMobileMenu()"><span class="dl-dot"></span>Faculty</a>
             <!-- <a href="#gallery" onclick="closeMobileMenu()"><span class="dl-dot"></span>Gallery</a> -->
             <a href="#events" onclick="closeMobileMenu()"><span class="dl-dot"></span>Events</a>
@@ -107,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px
+    /* gap: 20px */
 }
 
 .logo {
